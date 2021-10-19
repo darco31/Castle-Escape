@@ -1,3 +1,96 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+
+
+# Creator: Stephen Darcy
+# Date:
+# Project 3 - The code Institute
+
+
+import time
+
+a = 2
+
+print("""
+      pass
+     """)
+
+
+def start():
+    # Storyline prompts
+    print("\n The Great Castle Escape\n")
+
+    print("\n You awake a little dazed and confused.")
+    time.sleep(a)
+    print("\n You can vaguely hear rain crashing down on a tiled roof.")
+    time.sleep(a)
+    print("\n The sound of thunder rings in the air.")
+    time.sleep(a)
+    print("\n As your senses come back you try to recall the past few hours, but everything is hazy.")
+    time.sleep(a)
+    print("\n As you look around your surroundings you appear to be in a room with just a large wooden door and a small window on one side of the room.. The walls are stone and look damp.")
+    time.sleep(a)
+
+    print("\n DO YOU WANT TRY ESCAPE THE CASTLE? (y or n) ")
+    # convert the player's input to lower_case
+    answer = input(">").lower()
+    if answer == "y":
+        # player approches the small window
+        small_window()
+    elif answer == "n":
+        # take player to play_again()
+        print("\n Shame")
+        time.sleep(a)
+        print("\n Enjoy the solitude and loniness of the tower")
+        play_again()
+    else:
+        # else return player to start()
+        start()
+
+
+def small_window():
+    print("\n You get up and walk towards the window.")
+    time.sleep(a)
+    print("\n You peer out and can only see darkness")
+    time.sleep(a)
+    print("\n Will you try open the window")
+
+    window = input(">").lower()
+
+    if window == "y":
+        print("\n The window is sealed shut and doesnt budge so you head towards the door")
+        large_door()
+    elif window == "n":
+        print("\n You ignore the window,turn and head for the door")
+
+
+def large_door():
+    print("\n You walk towards the door and try the handle, to your surprise it opens")
+    print("\n Do you proceed through the door?")
+
+    proceed = input(">").lower()
+
+    if proceed == "y":
+        print("\n You step tentiviely trhought he door and peer from side to side")
+        print("\n You can make out two more doors at either end of the hall")
+
+
+def play_again():
+    print("\n DO YOU WANT TO PLAY AGAIN (y or n)")
+    # convert the player's input to lower_case
+    answer = input(">").lower()
+    if answer == "y":
+        # take player to start()
+        start()
+    elif answer == "n":
+        # exit() the program
+        print("\n Sorry to see you go")
+        print("\n Granny hopes you will return")
+        exit()
+    else:
+        # return to start()
+        start()
+
+
+start()
