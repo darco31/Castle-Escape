@@ -42,12 +42,13 @@ The walls are stone and look damp.")
 
     print("\n So do you have the guts to try and escape? (y or n) ")
     # convert the player's input to lower_case
-    answer = input(">").lower()
+    answer = input(">").lower().strip()
     if answer == "y":
         # player approches the small window
         small_window()
     elif answer == "n":
-        # take player to play_again()
+        # take player to play_again()  
+
         print("\n Shame")
         time.sleep(TIME_ELAPSED)
         print("\n Enjoy the solitude and loniness of the tower")
@@ -66,9 +67,9 @@ def small_window():
     time.sleep(TIME_ELAPSED)
     print("\n You peer out and can only see darkness")
     time.sleep(TIME_ELAPSED)
-    print("\n Will you try open the window")
+    print("\n Will you try open the window (y or n)")
 
-    window = input(">").lower()
+    window = input(">").lower().strip()
 
     if window == "y":
         print("\n The window is sealed shut \
@@ -77,6 +78,7 @@ towards the door")
         large_door()
     elif window == "n":
         print("\n You ignore the window,turn and head for the door")
+        large_door()
 
 
 def large_door():
@@ -88,7 +90,7 @@ def large_door():
 try the handle, to your surprise it opens")
     print("\n Do you proceed through the door?")
 
-    proceed = input(">").lower()
+    proceed = input(">").lower().strip()
 
     if proceed == "y":
         print("\n You step tentiviely through \
@@ -112,15 +114,26 @@ def take_items():
     """
     Options for the user to take the items from the drawer
     """
-    print("\n You you pick up the items from the drawer? (y or n")
+    print("\n You you pick up the items from the drawer? (y or n)")
 
-    pick_items = input(">").lower()
+    pick_items = input(">").lower().strip()
 
     if pick_items == "y":
         print("\n You reach in and pick up both items and \
-place them in your pockets")
+place them in your pockets. Maybe you can use the knife to open the window?")
+        back_to_window()
     else:
-        print("\n You shut the drawer silently")
+        print("\n You shut the drawer silently and move on")
+
+
+def back_to_window():
+    """
+    Returns the player to the first room with the sealed window"
+    """
+    print("Back in the first room")
+
+    print("\n You look out again and deside its safe")
+    print("\n Do you try the window with the knife? (y or n)")
 
 
 def play_again():
