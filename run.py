@@ -12,10 +12,6 @@ import time
 
 TIME_ELAPSED = 2
 
-print("""
-      pass
-     """)
-
 
 def start():
     """
@@ -23,6 +19,25 @@ def start():
     if the player would like to play or not.
     """
     print("\n The Great Castle Escape\n")
+    time.sleep(TIME_ELAPSED)
+    print('''
+                                     T~~
+                                     |
+                                     /"\\
+                             T~~     |'| T~~
+                         T~~ |    T~ WWWW|
+                         |  /"\   |  |  |/\T~~
+                         /"\ WWW  /"\ |' |WW|
+                         WWWWW/\| /   \|'/\|/"\\
+                         |   /__\/]WWW[\/__\WWWW
+                         |"  WWWW'|I_I|'WWWW'  |
+                         |   |' |/  -  \|' |'  |
+                         |'  |  |LI=H=LI|' |   |
+                         |   |' | |[_]| |  |'  |
+                         |   |  |_|###|_|  |   |
+                         '---'--'-/___\-'--'---'
+                     \n
+                     Welcome to Cath's Cats' Castle!\n''')
 
     print("\n You awake a little dazed and confused.")
     time.sleep(TIME_ELAPSED)
