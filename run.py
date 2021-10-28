@@ -57,7 +57,7 @@ The walls are stone and look damp.")
 
     print("\n So do you have the guts to try and escape? (y or n) ")
     # convert the player's input to lower_case
-    answer = input(">").lower().strip()
+    answer = input("> \n").lower().strip()
     if answer == "y":
         # player approches the small window
         small_window()
@@ -84,7 +84,7 @@ def small_window():
     time.sleep(TIME_ELAPSED)
     print("\n Will you try open the window (y or n)")
 
-    window = input(">").lower().strip()
+    window = input("> \n").lower().strip()
 
     if window == "y":
         print("\n The window is sealed shut \
@@ -105,7 +105,7 @@ def large_door():
 try the handle, to your surprise it opens")
     print("\n Do you proceed through the door?")
 
-    proceed = input(">").lower().strip()
+    proceed = input("> \n").lower().strip()
 
     if proceed == "y":
         print("\n You step tentiviely through \
@@ -114,7 +114,7 @@ the door and peer from side to side")
         print("\n There is a table with a drawer to your left")
         print("\n Do you check the drawer? (y or n) ")
 
-        drawer = input(">").lower()
+        drawer = input("> \n").lower()
 
         if drawer == "y":
             print("\n You pull at the drawr and it opens, inside is a key and\
@@ -131,7 +131,7 @@ def take_items():
     """
     print("\n You you pick up the items from the drawer? (y or n)")
 
-    pick_items = input(">").lower().strip()
+    pick_items = input("> \n").lower().strip()
 
     if pick_items == "y":
         print("\n You reach in and pick up both items and \
@@ -151,7 +151,7 @@ def back_to_window():
     print("\n You look out the window again and decide its safe")
     print("\n Do you try the window with the knife? (y or n)")
 
-    open_window = input(">").lower().strip()
+    open_window = input("> \n").lower().strip()
 
     if open_window == "y":
         print("\n You jam the knife into the gap[ of the window pain \
@@ -194,7 +194,7 @@ def play_again():
     """
     print("\n DO YOU WANT TO PLAY AGAIN (y or n)")
     # convert the player's input to lower_case
-    answer = input(">").lower().strip()
+    answer = input("> \n").lower().strip()
     if answer == "y":
         # take player to start()
         start()
