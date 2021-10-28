@@ -37,7 +37,7 @@ def start():
                          |   |  |_|###|_|  |   |
                          '---'--'-/___\-'--'---'
                      \n
-                     Welcome to Cath's Cats' Castle!\n''')
+                     Can you escape the castle!\n''')
 
     print("\n You awake a little dazed and confused.")
     time.sleep(TIME_ELAPSED)
@@ -62,7 +62,7 @@ The walls are stone and look damp.")
         # player approches the small window
         small_window()
     elif answer == "n":
-        # take player to play_again()  
+        # take player to play_again()
 
         print("\n Shame")
         time.sleep(TIME_ELAPSED)
@@ -135,7 +135,8 @@ def take_items():
 
     if pick_items == "y":
         print("\n You reach in and pick up both items and \
-place them in your pockets. Maybe you can use the knife to open the window?")
+place them in your pockets. Maybe you can use the knife \
+to open the window?")
         back_to_window()
     else:
         print("\n You shut the drawer silently and move on")
@@ -147,8 +148,44 @@ def back_to_window():
     """
     print("Back in the first room")
 
-    print("\n You look out again and deside its safe")
+    print("\n You look out the window again and decide its safe")
     print("\n Do you try the window with the knife? (y or n)")
+
+    open_window = input(">").lower().strip()
+
+    if open_window == "y":
+        print("\n You jam the knife into the gap[ of the window pain \
+the timber comes loose and the window pops open \
+Success, you climb up and out side")
+        print("\n You peer down through the dark and the rain and can just make \
+out the sloping roof. You jump and to your horror the tile \
+gives way and you fall to your death.")
+        play_again()
+
+    else:
+        print("\n You jam the knife into the gap of the window pain \
+the timber comes loose and the window pops open \
+Success, but")
+        
+        print("\n Looking down into thte dark bleak night \
+you decide its best not to try jump and make your \
+way back inside")
+        return_inside()
+
+
+def return_inside():
+
+    print("\n Ahhh I am back where I started. You head back out \
+the large door and go left. ")
+    time.sleep(TIME_ELAPSED)
+    print("\n You approach the door at the left end of the corridor \
+It creaks open and you peer inside, the room is lit only by a single \
+candle. There doesnt appear to be anybody in the room so you \
+proceed inside. Directley in front of you is an opening \
+with what looks like a staisrs going down.")
+    time.sleep(TIME_ELAPSED)
+    print("\n Do you proceed down the stairs or explore the room? \
+(proceed or explore)")
 
 
 def play_again():
@@ -157,14 +194,14 @@ def play_again():
     """
     print("\n DO YOU WANT TO PLAY AGAIN (y or n)")
     # convert the player's input to lower_case
-    answer = input(">").lower()
+    answer = input(">").lower().strip()
     if answer == "y":
         # take player to start()
         start()
     elif answer == "n":
         # exit() the program
         print("\n Sorry to see you go")
-        print("\n Granny hopes you will return")
+        print("\n Please come back again")
         exit()
     else:
         # return to start()
