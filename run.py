@@ -89,6 +89,7 @@ def small_window():
         print("\n The window is sealed shut \
 and doesnt budge so you head \
 towards the door")
+        time.sleep(TIME_ELAPSED)
         large_door()
     elif window == "n":
         print("\n You ignore the window,turn and head for the door")
