@@ -48,7 +48,8 @@ def start():
     print("\n As your senses come back you try to recall the past few hours,\
 but everything is hazy.")
     time.sleep(TIME_ELAPSED)
-    print("\n As you look around your surroundings \nyou appear to be in a room \
+    print("\n As you look around your surroundings\
+you appear to be in a room \
 with just a large wooden door and a \
 small window on one side of the room. \
 The walls are stone and look damp.")
