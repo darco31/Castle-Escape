@@ -49,7 +49,7 @@ def start():
 but everything is hazy.")
     time.sleep(TIME_ELAPSED)
     print("\n As you look around your surroundings you appear to be in a room \
-with just") 
+with")
     print("\n a large wooden door and a small window on one side of the room.") 
     print("\n The walls are stone and look damp.") 
     time.sleep(TIME_ELAPSED)
