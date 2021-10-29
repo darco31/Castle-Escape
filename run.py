@@ -160,6 +160,16 @@ Success, you climb up and out side")
         print("\n You peer down through the dark and the rain and can just make \
 out the sloping roof. You jump and to your horror the tile \
 gives way and you fall to your death.")
+
+        print('''
+  ╔╗           ╔╗
+  ║║           ║║
+╔═╝║╔══╗╔══╗ ╔═╝║
+║╔╗║║╔╗║╚ ╗║ ║╔╗║
+║╚╝║║║═╣║╚╝╚╗║╚╝║
+╚══╝╚══╝╚═══╝╚══╝
+                 
+            ''')     
         play_again()
 
     else:
