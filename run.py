@@ -9,13 +9,14 @@
 
 
 import time
+from colorama import Fore
 
 TIME_ELAPSED = 2
 
 
 def start():
     """
-    Satrts the game, gives a narrative to set the scene and asks
+    Starts the game, gives a narrative to set the scene and asks
     if the player would like to play or not.
     """
     print("\n The Great Castle Escape\n")
@@ -39,13 +40,13 @@ def start():
                      \n
                      Can you escape the castle!\n''')
 
-    print("\n You awake a little dazed and confused.")
+    print(f"\n {Fore.BLUE} You awake a little dazed and confused.")
     time.sleep(TIME_ELAPSED)
     print("\n You can vaguely hear rain crashing down on a tiled roof.")
     time.sleep(TIME_ELAPSED)
     print("\n The sound of thunder rings in the air.")
     time.sleep(TIME_ELAPSED)
-    print("\n As your senses come back you try to recall the past few hours, \
+    print("\n As your senses come back you try to recall the past few hours,\
 but everything is hazy.")
     time.sleep(TIME_ELAPSED)
     print("\n As you look around your surroundings \
