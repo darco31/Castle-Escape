@@ -38,7 +38,18 @@ def start():
                          '---'--'-/___\-'--'---'
                      \n
                      Can you escape the castle!\n''')
+    while True:
+        # set P_NAME to a global variable.
+        global P_NAME
+        P_NAME = input("Please enter a username: \n")
+        print()
+        if P_NAME == "":
+            print("You need to enter a username to continue...\n")
+            continue
+        else:
+            break
 
+    print(f"Welcome {P_NAME}, good luck!\n\n")
     print("\n You awake a little dazed and confused.")
     time.sleep(TIME_ELAPSED)
     print("\n You can vaguely hear rain crashing down on a tiled roof.")
@@ -50,7 +61,7 @@ but everything is hazy.")
     time.sleep(TIME_ELAPSED)
     print("\n As you look around your surroundings you appear to be in a room \
 with")
-    print("\n a large wooden door and a small window on one side of the room.") 
+    print("\n a large wooden door and a small window on one side of the room.")
     print("\n The walls are stone and look damp.") 
     time.sleep(TIME_ELAPSED)
 
