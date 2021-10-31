@@ -203,10 +203,29 @@ the large door and go left. ")
 It creaks open and you peer inside, the room is lit only by a single \
 candle. There doesnt appear to be anybody in the room so you \
 proceed inside. Directley in front of you is an opening \
-with what looks like a staisrs going down.")
+with what looks like a stairs going down.")
     time.sleep(TIME_ELAPSED)
-    print("\n Do you proceed down the stairs or explore the room? \
-(proceed or explore)")
+    print("\n Do you proceed down the stairs, explore the room or turn back? \
+(proceed or explore or tuen back)")
+    decsion = input("> \n").lower().strip()
+    if decsion == "explore":
+        explore_room()
+    elif decsion == "proceed":
+        print("\n You decide to head down the stairs")
+    else:
+        print("\n You turn around and head back for the other door")
+
+
+def explore_room():
+    """
+    Player desides to either explore this room or move doen the stairs
+    that are in the room
+    """
+    print("\n As you look around the room you see some fruit in a \
+bowl, you pick it up and eat fast while contiuing t o explore")
+    time.sleep(TIME_ELAPSED)
+    print("\n You see an old belt which you think will come in handy \
+so you pick it up put it on and tuck the knife into it.")
 
 
 def play_again():
