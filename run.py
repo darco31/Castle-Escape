@@ -145,7 +145,7 @@ def back_to_window():
     """
     Returns the player to the first room with the sealed window"
     """
-    P_STAT(Fore.RED + "You return to the first room", 3)
+    P_STAT(Fore.RED + "\n You return to the first room", 3)
 
     P_STAT("\n You look out the window again and decide its safe", 2)
     P_STAT("\n Do you try the window with the knife? (Y or N", 1)
@@ -218,8 +218,8 @@ def proceed_down_stairs():
     P_STAT("\n Do you attack or try sneak past", 2)
 
     attack = input("> \n").lower().strip()
-    if attack == "y" or attack == "yes":
-        P_STAT("\n Yu cahreg at the two men who are surprised", 2)
+    if attack:
+        P_STAT("\n You charge at the two men who are surprised", 2)
         P_STAT(Fore.RED + '''
                               ╔╗           ╔╗
                               ║║           ║║
@@ -260,7 +260,7 @@ def play_again():
         start()
     elif answer == "n":
         # exit() the program
-        print("\n Sorry to see you go")
+        print(f"\n Sorry to see you go {P_NAME}")
         print("\n Please come back again")
         exit()
     else:
