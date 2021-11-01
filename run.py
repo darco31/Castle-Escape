@@ -1,6 +1,4 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+from functions import P_STAT
 
 
 # Creator: Stephen Darcy
@@ -21,8 +19,8 @@ def start():
     Starts the game, gives a narrative to set the scene and asks
     if the player would like to play or not.
     """
-    print(Fore.RED + Back.YELLOW + Style.BRIGHT + 
-                    "\n The Great Castle Escape\n")
+    print(Fore.RED + Back.YELLOW + Style.BRIGHT + "\nThe Great Castle \
+Escape\n")
     time.sleep(TIME_ELAPSED)
     print(Fore.CYAN + '''
                                      T~~
@@ -45,7 +43,7 @@ def start():
     while True:
         # set P_NAME to a global variable.
         global P_NAME
-        P_NAME = input("Please enter a username: \n")
+        P_NAME = input("\nPlease enter a username: \n")
         print()
         if P_NAME == "":
             print("You need to enter a username to continue...\n")
@@ -53,34 +51,26 @@ def start():
         else:
             break
 
-    print(f"Welcome {P_NAME}, good luck!\n\n")
-    print("\n You awake a little dazed and confused.")
-    time.sleep(TIME_ELAPSED)
-    print("\n You can vaguely hear rain crashing down on a tiled roof.")
-    time.sleep(TIME_ELAPSED)
-    print("\n The sound of thunder rings in the air.")
-    time.sleep(TIME_ELAPSED)
-    print("\n As your senses come back you try to recall the past few hours,\
-but everything is hazy.")
-    time.sleep(TIME_ELAPSED)
-    print("\n As you look around your surroundings you appear to be in a room \
-with")
-    print("\n a large wooden door and a small window on one side of the room.")
-    print("\n The walls are stone and look damp.") 
-    time.sleep(TIME_ELAPSED)
-
-    print("\n So do you have the guts to try and escape? (y or n) ")
+    P_STAT(f"Welcome {P_NAME}, good luck!\n", 2)
+    P_STAT("\n You awake a little dazed and confused.", 2)
+    P_STAT("\n You can vaguely hear rain crashing down on a tiled roof.", 2)
+    P_STAT("\n The sound of thunder rings in the air.", 2)
+    P_STAT("\n As your senses come back you try to recall the past ", 2)
+    P_STAT("\n few hours,but everything is hazy.", 2)
+    P_STAT("\n As you look around your surroundings ", 2)
+    P_STAT("\n you appear to be in a room with", 2)
+    P_STAT("\n a large wooden door and a small window on one ", 2)
+    P_STAT("\n side of the room. The walls are stone and look damp.", 2)
+    P_STAT("\n So do you have the guts to try and escape? (y or n) ", 1)
     # convert the player's input to lower_case
     answer = input("> \n").lower().strip()
-    if answer == "y":
+    if answer == "y" or answer == 'yes':
         # player approches the small window
         small_window()
-    elif answer == "n":
+    elif answer == "n" or answer == 'no':
         # take player to play_again()
-
-        print("\n Shame")
-        time.sleep(TIME_ELAPSED)
-        print("\n Enjoy the solitude and loniness of the tower")
+        P_STAT("\n Shame", 2)
+        P_STAT("\n Enjoy the solitude and loniness of the tower", 2)
         play_again()
     else:
         # else return player to start()
@@ -92,48 +82,43 @@ def small_window():
     The users initial options in the game, go to window
     or use the door
     """
-    print("\n You get up and walk towards the window.")
-    time.sleep(TIME_ELAPSED)
-    print("\n You peer out and can only see darkness")
-    time.sleep(TIME_ELAPSED)
-    print("\n Will you try open the window (y or n)")
+    P_STAT("\n You get up and walk towards the window.", 2)
+    P_STAT("\n You peer out and can only see darkness", 2)
+    P_STAT("\n Will you try open the window (y or n)", 1)
 
     window = input("> \n").lower().strip()
-
     if window == "y":
-        print("\n The window is sealed shut \
-and doesnt budge so you head \
-towards the door")
-        time.sleep(TIME_ELAPSED)
+        P_STAT("\n The window is sealed shut and ", 2)
+        P_STAT("\n doesnt budge so you head towards the door", 2)
         large_door()
     elif window == "n":
-        print("\n You ignore the window,turn and head for the door")
+        P_STAT("\n You ignore the window,turn and head for the door", 2)
         large_door()
 
 
 def large_door():
     """
-    User approches the large door in the first room and \
-
+    User approches the large door in the first room and
+    will decide to go either left or right
     """
-    print("\n You walk towards the door and \
-try the handle, to your surprise it opens")
-    print("\n Do you proceed through the door?")
+    P_STAT("\n You walk towards the door and", 2)
+    P_STAT("\n try the handle, to your surprise it opens", 2)
+    P_STAT("\n Do you proceed through the door? Y or N", 1)
 
     proceed = input("> \n").lower().strip()
 
-    if proceed == "y":
-        print("\n You step tentiviely through \
-the door and peer from side to side")
-        print("\n You can make out two more doors at either end of the hall")
-        print("\n There is a table with a drawer to your left")
-        print("\n Do you check the drawer? (y or n) ")
+    if proceed == "y" or proceed == "yes":
+        P_STAT("\n You step tentiviely through", 2)
+        P_STAT("\n the door and peer from side to side", 2)
+        P_STAT("\n You make out two more doors at either end of the hall", 2)
+        P_STAT("\n There is a table with a drawer to your left", 2)
+        P_STAT("\n Do you check the drawer? (y or n) ", 1)
 
         drawer = input("> \n").lower()
 
-        if drawer == "y":
-            print("\n You pull at the drawr and it opens, inside is a key and\
- a small knife")
+        if drawer == "y" or drawer == "yes":
+            P_STAT("\n You pull at the drawer and it opens,", 1)
+            P_STAT("\n inside is a key and a small knife", 1)
         take_items()
 
     else:
@@ -144,73 +129,70 @@ def take_items():
     """
     Options for the user to take the items from the drawer
     """
-    print("\n You you pick up the items from the drawer? (y or n)")
-
+    P_STAT("\n You you pick up the items from the drawer? (y or n)", 1)
     pick_items = input("> \n").lower().strip()
-
-    if pick_items == "y":
-        print("\n You reach in and pick up both items and \
-place them in your pockets. Maybe you can use the knife \
-to open the window?")
+    if pick_items == "y" or pick_items == "yes":
+        P_STAT("\n You reach in and pick up both items and", 2)
+        P_STAT("\n place them in your pockets. Maybe you can use the knife", 2)
+        P_STAT("\n to open the window?", 2)
         back_to_window()
     else:
         print("\n You shut the drawer silently and move on")
+        return_inside()
 
 
 def back_to_window():
     """
     Returns the player to the first room with the sealed window"
     """
-    print("Back in the first room")
+    P_STAT(Fore.RED + "You return to the first room", 3)
 
-    print("\n You look out the window again and decide its safe")
-    print("\n Do you try the window with the knife? (y or n)")
+    P_STAT("\n You look out the window again and decide its safe", 2)
+    P_STAT("\n Do you try the window with the knife? (Y or N", 1)
 
     open_window = input("> \n").lower().strip()
 
-    if open_window == "y":
-        print("\n You jam the knife into the gap[ of the window pain \
-the timber comes loose and the window pops open \
-Success, you climb up and out side")
-        print("\n You peer down through the dark and the rain and can just make \
-out the sloping roof. You jump and to your horror the tile \
-gives way and you fall to your death.")
+    if open_window == "y" or open_window == "yes":
+        P_STAT("\n You jam the knife into the gap of the window pain", 2)
+        P_STAT("\n the timber comes loose and the window pops open", 2)
+        P_STAT("\n Success, you climb up and out side", 2)
+        P_STAT("\n You peer through the dark and the rain and can just", 2)
+        P_STAT("\n make out the sloping roof. You jump and to your horror ", 2)
+        P_STAT("\n the tile gives way and you fall to your death.", 3)
 
-        print(Fore.RED + '''
-  ╔╗           ╔╗
-  ║║           ║║
-╔═╝║╔══╗╔══╗ ╔═╝║
-║╔╗║║╔╗║╚ ╗║ ║╔╗║
-║╚╝║║║═╣║╚╝╚╗║╚╝║
-╚══╝╚══╝╚═══╝╚══╝
-                 
-            ''')     
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+
+            ''', 2)
         play_again()
 
     else:
-        print("\n You jam the knife into the gap of the window pain \
-the timber comes loose and the window pops open \
-Success, but")
-        
-        print("\n Looking down into thte dark bleak night \
-you decide its best not to try jump and make your \
-way back inside")
+        P_STAT("\n Looking down into the dark bleak night", 2)
+        P_STAT("you decide its best not to try jump and make your", 2)
+        P_STAT("way back inside", 2)
         return_inside()
 
 
 def return_inside():
+    """
+    The user goes back to the large door in the first room
+    """
+    P_STAT("\n Ahhh I am back where I started.", 2)
+    P_STAT("\n You head back out the large door and go left. ", 2)
+    P_STAT("\n You approach the door at the left end of the corridor", 2)
+    P_STAT("\n It creaks open and you peer inside, ", 2)
+    P_STAT("\n the room is lit only by a single", 2)
+    P_STAT("\n candle. There doesnt appear to be anybody in the room ", 2)
+    P_STAT("\n so you proceed inside. Directley in front of you is", 2)
+    P_STAT("\n an opening with what looks like a stairs going down.", 2)
+    P_STAT("\n Do you go down the stairs, explore the room or turn back?", 2)
+    P_STAT("\n proceed or explore or turn back", 1)
 
-    print("\n Ahhh I am back where I started. You head back out \
-the large door and go left. ")
-    time.sleep(TIME_ELAPSED)
-    print("\n You approach the door at the left end of the corridor \
-It creaks open and you peer inside, the room is lit only by a single \
-candle. There doesnt appear to be anybody in the room so you \
-proceed inside. Directley in front of you is an opening \
-with what looks like a stairs going down.")
-    time.sleep(TIME_ELAPSED)
-    print("\n Do you proceed down the stairs, explore the room or turn back? \
-(proceed or explore or tuen back)")
     decsion = input("> \n").lower().strip()
     if decsion == "explore":
         explore_room()
