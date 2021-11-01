@@ -6,9 +6,12 @@
 # Creator: Stephen Darcy
 # Date:
 # Project 3 - The code Institute
-
-
 import time
+
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+
 
 TIME_ELAPSED = 2
 
@@ -18,7 +21,7 @@ def start():
     Starts the game, gives a narrative to set the scene and asks
     if the player would like to play or not.
     """
-    print("\n The Great Castle Escape\n")
+    print(Fore.RED + Back.YELLOW + "\n The Great Castle Escape\n")
     time.sleep(TIME_ELAPSED)
     print('''
                                      T~~
