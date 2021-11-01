@@ -191,7 +191,7 @@ def return_inside():
     P_STAT("\n so you proceed inside. Directley in front of you is", 2)
     P_STAT("\n an opening with what looks like a stairs going down.", 2)
     P_STAT("\n Do you go down the stairs, explore the room or turn back?", 2)
-    P_STAT("\n proceed or explore or turn back", 1)
+    P_STAT("\n Proceed or Explore or Turn Back?", 1)
 
     decsion = input("> \n").lower().strip()
     if decsion == "explore":
@@ -244,6 +244,8 @@ def explore_room():
     P_STAT("\n bowl, you pick it up and eat fast while exploring", 2)
     P_STAT("\n You see an old belt which you think will come in handy", 2)
     P_STAT("\n so you pick it up put it on and tuck the knife into it.", 2)
+
+    proceed_down_stairs()
 
 
 def play_again():
