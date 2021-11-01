@@ -173,8 +173,8 @@ def back_to_window():
 
     else:
         P_STAT("\n Looking down into the dark bleak night", 2)
-        P_STAT("you decide its best not to try jump and make your", 2)
-        P_STAT("way back inside", 2)
+        P_STAT("\n you decide its best not to try jump and make your", 2)
+        P_STAT("\n way back inside", 2)
         return_inside()
 
 
@@ -197,21 +197,53 @@ def return_inside():
     if decsion == "explore":
         explore_room()
     elif decsion == "proceed":
-        print("\n You decide to head down the stairs")
+        P_STAT("\n You decide to head down the stairs", 2)
+        proceed_down_stairs()
     else:
-        print("\n You turn around and head back for the other door")
+        P_STAT("\n You turn around and head back for the other door", 2)
+
+
+def proceed_down_stairs():
+    """
+    Player goes down the stairs
+    """
+    P_STAT("\n You proceed towards the door", 2)
+    P_STAT("\n Huggin the wall you sneak down the stairs", 2)
+    P_STAT("\n At the bottom you are in a well lit room", 2)
+    P_STAT("\n You listen intently, you can hear voices", 2)
+    P_STAT("\n You peek around the corner and there are two men with", 2)
+    P_STAT("\n swords? SWORDS? Where am I you think", 2)
+
+    P_STAT("\n The backs are to you", 2)
+    P_STAT("\n Do you attack or try sneak past", 2)
+
+    attack = input("> \n").lower().strip()
+    if attack == "y" or attack == "yes":
+        P_STAT("\n Yu cahreg at the two men who are surprised", 2)
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+
+            ''', 2)
+        play_again()
+    else:
+        P_STAT("\n You put your back against the wall and", 2)
+        P_STAT("\n snaek as quite;ly as you can past the two men", 2)
 
 
 def explore_room():
     """
-    Player desides to either explore this room or move doen the stairs
+    Player decides to either explore this room or move doen the stairs
     that are in the room
     """
-    print("\n As you look around the room you see some fruit in a \
-bowl, you pick it up and eat fast while contiuing t o explore")
-    time.sleep(TIME_ELAPSED)
-    print("\n You see an old belt which you think will come in handy \
-so you pick it up put it on and tuck the knife into it.")
+    P_STAT("\n As you look around the room you see some fruit in a", 2)
+    P_STAT("\n bowl, you pick it up and eat fast while exploring", 2)
+    P_STAT("\n You see an old belt which you think will come in handy", 2)
+    P_STAT("\n so you pick it up put it on and tuck the knife into it.", 2)
 
 
 def play_again():
