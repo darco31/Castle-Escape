@@ -21,9 +21,10 @@ def start():
     Starts the game, gives a narrative to set the scene and asks
     if the player would like to play or not.
     """
-    print(Fore.RED + Back.YELLOW + "\n The Great Castle Escape\n")
+    print(Fore.RED + Back.YELLOW + Style.BRIGHT + 
+                    "\n The Great Castle Escape\n")
     time.sleep(TIME_ELAPSED)
-    print('''
+    print(Fore.CYAN + '''
                                      T~~
                                      |
                                      /"\\
@@ -40,7 +41,7 @@ def start():
                          |   |  |_|###|_|  |   |
                          '---'--'-/___\-'--'---'
                      \n
-                     Can you escape the castle!\n''')
+                        Can you escape the castle!\n''')
     while True:
         # set P_NAME to a global variable.
         global P_NAME
@@ -175,7 +176,7 @@ Success, you climb up and out side")
 out the sloping roof. You jump and to your horror the tile \
 gives way and you fall to your death.")
 
-        print('''
+        print(Fore.RED + '''
   ╔╗           ╔╗
   ║║           ║║
 ╔═╝║╔══╗╔══╗ ╔═╝║
