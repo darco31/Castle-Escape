@@ -51,7 +51,7 @@ Escape\n")
         else:
             break
 
-    P_STAT(f"Welcome {P_NAME}, good luck!\n", 2)
+    P_STAT(f"\n Welcome {P_NAME}, good luck!\n", 2)
     P_STAT("\n You awake a little dazed and confused.", 2)
     P_STAT("\n You can vaguely hear rain crashing down on a tiled roof.", 2)
     P_STAT("\n The sound of thunder rings in the air.", 2)
