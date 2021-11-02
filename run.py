@@ -92,7 +92,7 @@ def small_window():
         P_STAT("\n doesnt budge so you head towards the door", 2)
         large_door()
     elif window_open == "n":
-        P_STAT("\n You ignore the window,turn and head for the door", 2)
+        P_STAT("\n You ignore the window", 2)
         large_door()
 
 
@@ -112,7 +112,7 @@ def large_door():
         P_STAT("\n the door and peer from side to side", 2)
         P_STAT("\n You make out two more doors at either end of the hall", 2)
         P_STAT("\n There is a table with a drawer to your left", 2)
-        P_STAT("\n Do you check the drawer? (y or n) ", 1)
+        P_STAT("\n Do you check the drawer? (Y or N) ", 1)
 
         drawer = input("> \n").lower()
 
@@ -122,7 +122,8 @@ def large_door():
         take_items()
 
     else:
-        print("\n You close the drawer and move on")
+        print("\n You move on")
+        direction_choice()
 
 
 def take_items():
@@ -138,7 +139,7 @@ def take_items():
         back_to_window()
     else:
         print("\n You shut the drawer silently and move on")
-        go_left()
+        direction_choice()
 
 
 def back_to_window():
@@ -173,9 +174,24 @@ def back_to_window():
 
     else:
         P_STAT("\n Looking down into the dark bleak night", 2)
-        P_STAT("\n you decide its best not to try jump and make your", 2)
+        P_STAT("\n you decide its best not to try and make your", 2)
         P_STAT("\n way back to the large door", 2)
+        direction_choice()
+
+
+def direction_choice():
+    """
+    Player to choose weather to go left or right
+    """
+    P_STAT("\n Standing in the doorway you need to make a choice", 2)
+    P_STAT("\n Left or Right", 1)
+    
+    player_choice = input("> \n").lower().strip()
+
+    if player_choice == "left":
         go_left()
+    else:
+        go_right()
 
 
 def go_left():
@@ -197,7 +213,6 @@ def go_left():
     if decsion == "explore":
         explore_room()
     elif decsion == "proceed":
-        P_STAT("\n You decide to head down the stairs", 2)
         proceed_down_stairs()
     else:
         P_STAT("\n You turn around and head back for the other door", 2)
@@ -218,9 +233,10 @@ def proceed_down_stairs():
     P_STAT("\n The backs are to you", 2)
     P_STAT("\n Do you attack or try sneak past", 2)
 
-    attack = input("> \n").lower().strip()
-    if attack:
+    attack_men = input("> \n").lower().strip()
+    if attack_men == "attack":
         P_STAT("\n You charge at the two men who are surprised", 2)
+        P_STAT("\n One swipe of the sword and you are ......", 2)
         P_STAT(Fore.RED + '''
                               ╔╗           ╔╗
                               ║║           ║║
@@ -233,7 +249,7 @@ def proceed_down_stairs():
         play_again()
     else:
         P_STAT("\n You put your back against the wall and", 2)
-        P_STAT("\n snaek as quite;ly as you can past the two men", 2)
+        P_STAT("\n snaek as quitely as you can past the two men", 2)
 
 
 def explore_room():
@@ -253,7 +269,7 @@ def go_right():
     """
     PLayer decides to go to the right hand door
     """
-    P_STAT("\n You turn right and head toward the door", 2)
+    P_STAT("\n You head toward the door", 2)
     P_STAT("\n You try the door, it is locked", 2)
     P_STAT("\n You remember the key and try that, it opens", 2)
     P_STAT("\n You open the door and enter the room", 2)
@@ -265,6 +281,27 @@ def go_right():
     if try_lever == "y" or try_lever == "yes":
         P_STAT("\n You try the first lever, nothing happens", 2)
         P_STAT("\n Maybe its a combination of the levers", 2)
+        P_STAT("\n Worth a go? (Y or N)", 2)
+        
+    try_combo = input("> \n").lower().strip()
+    P_STAT("\n Which levers will you pick (1,2,3)", 2)
+    
+
+    if try_combo == "y" or try_combo == "yes":
+        user = [1, 2, 3]
+        if user == 1 and 2:
+            pass
+        else:
+            P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+
+            ''', 2)
+        play_again()
 
 
 def play_again():
