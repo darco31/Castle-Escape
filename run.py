@@ -70,7 +70,7 @@ Escape\n")
     elif answer == "n" or answer == 'no':
         # take player to play_again()
         P_STAT("\n Shame", 2)
-        P_STAT("\n Enjoy the solitude and loniness of the tower", 2)
+        P_STAT(f"\n Enjoy the solitude and loniness of the tower {P_NAME}", 2)
         play_again()
     else:
         # else return player to start()
@@ -84,14 +84,14 @@ def small_window():
     """
     P_STAT("\n You get up and walk towards the window.", 2)
     P_STAT("\n You peer out and can only see darkness", 2)
-    P_STAT("\n Will you try open the window (y or n)", 1)
+    P_STAT("\n Will you try open the window (Y or N)", 1)
 
-    window = input("> \n").lower().strip()
-    if window == "y":
+    window_open = input("> \n").lower().strip()
+    if window_open == "y":
         P_STAT("\n The window is sealed shut and ", 2)
         P_STAT("\n doesnt budge so you head towards the door", 2)
         large_door()
-    elif window == "n":
+    elif window_open == "n":
         P_STAT("\n You ignore the window,turn and head for the door", 2)
         large_door()
 
@@ -103,7 +103,7 @@ def large_door():
     """
     P_STAT("\n You walk towards the door and", 2)
     P_STAT("\n try the handle, to your surprise it opens", 2)
-    P_STAT("\n Do you proceed through the door? Y or N", 1)
+    P_STAT("\n Do you proceed through the door? (Y or N)", 1)
 
     proceed = input("> \n").lower().strip()
 
@@ -129,7 +129,7 @@ def take_items():
     """
     Options for the user to take the items from the drawer
     """
-    P_STAT("\n You you pick up the items from the drawer? (y or n)", 1)
+    P_STAT("\n You you pick up the items from the drawer? (Y or N)", 1)
     pick_items = input("> \n").lower().strip()
     if pick_items == "y" or pick_items == "yes":
         P_STAT("\n You reach in and pick up both items and", 2)
@@ -138,7 +138,7 @@ def take_items():
         back_to_window()
     else:
         print("\n You shut the drawer silently and move on")
-        return_inside()
+        go_left()
 
 
 def back_to_window():
@@ -147,8 +147,8 @@ def back_to_window():
     """
     P_STAT(Fore.RED + "\n You return to the first room", 3)
 
-    P_STAT("\n You look out the window again and decide its safe", 2)
-    P_STAT("\n Do you try the window with the knife? (Y or N", 1)
+    P_STAT("\n You look out the window again", 2)
+    P_STAT("\n Do you try the window with the knife? (Y or N)", 1)
 
     open_window = input("> \n").lower().strip()
 
@@ -174,15 +174,15 @@ def back_to_window():
     else:
         P_STAT("\n Looking down into the dark bleak night", 2)
         P_STAT("\n you decide its best not to try jump and make your", 2)
-        P_STAT("\n way back inside", 2)
-        return_inside()
+        P_STAT("\n way back to the large door", 2)
+        go_left()
 
 
-def return_inside():
+def go_left():
     """
     The user goes back to the large door in the first room
     """
-    P_STAT("\n Ahhh I am back where I started.", 2)
+
     P_STAT("\n You head back out the large door and go left. ", 2)
     P_STAT("\n You approach the door at the left end of the corridor", 2)
     P_STAT("\n It creaks open and you peer inside, ", 2)
@@ -201,6 +201,7 @@ def return_inside():
         proceed_down_stairs()
     else:
         P_STAT("\n You turn around and head back for the other door", 2)
+        go_right()
 
 
 def proceed_down_stairs():
@@ -246,6 +247,24 @@ def explore_room():
     P_STAT("\n so you pick it up put it on and tuck the knife into it.", 2)
 
     proceed_down_stairs()
+
+
+def go_right():
+    """
+    PLayer decides to go to the right hand door
+    """
+    P_STAT("\n You turn right and head toward the door", 2)
+    P_STAT("\n You try the door, it is locked", 2)
+    P_STAT("\n You remember the key and try that, it opens", 2)
+    P_STAT("\n You open the door and enter the room", 2)
+    P_STAT("\n Looking around you notice 3 levers on the wall", 2)
+    P_STAT("\n Do you try the levers? (Y or N", 1)
+
+    try_lever = input("> \n").lower().strip()
+
+    if try_lever == "y" or try_lever == "yes":
+        P_STAT("\n You try the first lever, nothing happens", 2)
+        P_STAT("\n Maybe its a combination of the levers", 2)
 
 
 def play_again():
